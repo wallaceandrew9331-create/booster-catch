@@ -1,0 +1,17 @@
+{
+  "name": "@booster/server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "node dist/server.mjs",
+    "build": "esbuild src/main.ts --bundle --platform=node --target=node22 --format=esm --outfile=dist/server.mjs --banner:js=\"import { createRequire } from 'node:module'; const require = createRequire(import.meta.url);\""
+  },
+  "dependencies": {
+    "@booster/sim": "*",
+    "@fastify/cors": "^11.0.0",
+    "@fastify/rate-limit": "^10.2.0",
+    "fastify": "^5.2.0"
+  }
+}
