@@ -1,0 +1,16 @@
+# Local full stack: leaderboard server in Docker, then run the web dev server
+# with `npm run dev` (it points at http://localhost:8787 by default).
+services:
+  server:
+    build:
+      context: .
+      dockerfile: apps/server/Dockerfile
+    ports:
+      - "8787:8787"
+    environment:
+      CORS_ORIGIN: "*"
+    volumes:
+      - bc-data:/data
+
+volumes:
+  bc-data:
