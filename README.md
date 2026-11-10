@@ -2,6 +2,8 @@
 
 [![ci](https://github.com/wallaceandrew9331-create/booster-catch/actions/workflows/ci.yml/badge.svg)](https://github.com/wallaceandrew9331-create/booster-catch/actions/workflows/ci.yml)
 
+**[▶ Play it in your browser](https://wallaceandrew9331-create.github.io/booster-catch/)**. Works on desktop and phones. The hosted build is offline-only for now (local bests and ghosts, no leaderboard).
+
 A rocket booster is falling back to the launch site at 150 m/s. Steer it with grid fins, light the engine at the right moment, and ease it between the launch tower's catch arms. A run takes about 30 seconds, and **R** restarts instantly.
 
 Under the game is a **deterministic simulation**. The same seed and the same input log reproduce a run bit for bit, in the browser or in Node. That one property drives three features:
@@ -179,9 +181,9 @@ I played the game in the browser and used the autopilot sweep (`npm run sim:swee
 
 Difficulty ramp: assist 1.0 / 0.8 / 0.45 / 0.35, relights 3 / 3 / 2 / 2, gusts 0 / 6 / 7 / 7 m/s for Calm → Sea. Daily conditions are drawn from the date in the Gusty-to-Sea range. In the final sweep the autopilot catches **500/500** free-play seeds (96% clean) and **97%** of 500 daily dates. Humans are the real test, and the autopilot's 20 Hz pulse steering is far from optimal play (its average score is a C/B), so there's plenty of room above it.
 
-## Deploying (not deployed yet)
+## Deploying
 
-**Static game: GitHub Pages.** [`.github/workflows/pages.yml`](.github/workflows/pages.yml) is manual-only (`workflow_dispatch`). Enable Pages with source "GitHub Actions", optionally set the repo variable `VITE_API_URL` to your server, then run the workflow. Vite's `base: './'` lets the build work under `/booster-catch/`.
+**Static game: GitHub Pages** (live at https://wallaceandrew9331-create.github.io/booster-catch/). [`.github/workflows/pages.yml`](.github/workflows/pages.yml) is manual-only (`workflow_dispatch`). Enable Pages with source "GitHub Actions", optionally set the repo variable `VITE_API_URL` to your server, then run the workflow. Vite's `base: './'` lets the build work under `/booster-catch/`.
 
 **Static game: Cloudflare Pages.** Use build command `npm ci && npm run build -w @booster/web`, output directory `apps/web/dist`, and the env var `VITE_API_URL` (optional).
 
