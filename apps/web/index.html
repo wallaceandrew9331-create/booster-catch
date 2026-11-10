@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#0b1220" />
+    <meta name="description" content="Catch a falling rocket booster with a launch tower's arms. A 30-second physics game with a daily challenge and ghost replays." />
+    <meta property="og:title" content="Booster Catch" />
+    <meta property="og:description" content="Land a falling booster between a tower's catch arms. One more try?" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <title>Booster Catch</title>
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+
+    <div id="touch" class="touch hidden" aria-hidden="true">
+      <div class="pad left">
+        <button data-bit="left" aria-label="Steer left">◀</button>
+        <button data-bit="right" aria-label="Steer right">▶</button>
+      </div>
+      <div class="pad right">
+        <div class="col">
+          <button data-bit="up" aria-label="Throttle up">▲</button>
+          <button data-bit="down" aria-label="Throttle down">▼</button>
+        </div>
+        <div class="col">
+          <button data-bit="engine" class="engine" aria-label="Engine on or off">ENG</button>
+          <button data-bit="clamp" class="clamp" aria-label="Close the arms">CLAMP</button>
+        </div>
+      </div>
+      <button id="touch-restart" class="touch-restart" aria-label="Restart">↻</button>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+    <div id="toast" class="toast hidden"></div>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
