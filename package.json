@@ -1,0 +1,35 @@
+{
+  "name": "booster-catch",
+  "private": true,
+  "description": "Catch a falling rocket booster with a tower's arms. Deterministic sim, ghost replays, server-verified leaderboard.",
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "npm run dev -w @booster/web",
+    "dev:server": "npm run dev -w @booster/server",
+    "build": "npm run build -w @booster/web && npm run build -w @booster/server",
+    "lint": "eslint .",
+    "typecheck": "tsc -p packages/sim && tsc -p packages/sim/tsconfig.test.json && tsc -p apps/web && tsc -p apps/server",
+    "test": "vitest run",
+    "sim:sweep": "tsx packages/sim/tools/sweep.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.20.5",
+    "esbuild": "^0.28.2",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.2",
+    "vite": "^8.3.7",
+    "vitest": "^5.1.0"
+  }
+}
