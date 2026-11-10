@@ -1,0 +1,7 @@
+{
+  // The simulation source gets no DOM and no Node typings on purpose: if it
+  // compiles, it cannot reach `window`, `process`, timers or the clock.
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": { "types": [] },
+  "include": ["src"]
+}
